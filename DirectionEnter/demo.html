@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>布局部分</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.demo {
+            width: 1030px;
+            margin: 50px auto;
+        }
+        .list {
+            border-radius: 15px;
+            overflow: hidden;
+            width: 300px;
+            height: 200px;
+            float: left;
+            margin: 20px;
+            position: relative;
+        }
+        .list div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotate(-100deg);
+            transform-origin: top left; /* 旋转中心点*/
+            transition: all .8s;
+        }
+        .current div {
+        	/* 相当于.list:hover div 只不过在这里给换成.current这个类了这个方法是我第一次见到，还可以这样用 */
+            transform: rotate(0deg);
+        }
+        .list div.top {
+            transform-origin: top left;
+        }
+        .list div.right {
+            transform-origin: top right;
+        }
+        .list div.bottom {
+            transform-origin: bottom right;
+        }
+        .list div.left {
+            transform-origin: bottom left;
+        }
+	</style>
+	<!-- 进入jquery部分了 -->
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script>
+		$(function(){
+			$(".list").on("mouseenter mouseleave",function(e) {
+				     var that = $(this);//以后还会经常这样定义
+                     var w = $(this).width(); // 得到盒子宽度
+                     var h = $(this).height();// 得到盒子高度
+                     var x = (e.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+                     // 获取x值
+                     var y = (e.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+                     // 获取y值
+                     var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4; //direction的值为“0,1,2,3”分别对应着“上，右，下，左”
+                     // 将点的坐标对应的弧度值换算成角度度数值
+                     if(e.type == 'mouseenter'){
+                        switch(direction) {
+                            case 0:// 鼠标从上面进来
+                                comeOn("top");
+                                break;
+                            case 1:// 鼠标从右面进来
+                                comeOn("right");
+                                break;
+                            case 2:// 鼠标从下面进来
+                                comeOn("bottom");
+                                break; 
+                            case 3:// 鼠标从左面进来
+                                comeOn("left");
+                                break;   
+                        }
+                     }else{
+                     	switch(direction){
+                     		case 0://鼠标从顶部出去
+                     		    getOut("top");
+                     		    break;
+                            case 1://鼠标从右面出去
+                                getOut("right");
+                                break;
+                            case 2://鼠标从下面出去
+                                getOut("bottom");
+                                break;
+                            case 3://鼠标从左面出去
+                                getOut("left");
+                                break;
+                                // switch语句的用法，就是
+                                // case 条件语句：
+                                // 执行语句；
+                                // break；  记住switch语句
+                     	}
+                     }
+                     function comeOn(str){
+                          that.addClass("current");
+                          that.children("div").removeClass().addClass(str);
+                          // 记住给一个元素的子元素增加一个类，首先获取这个元素that.children("div")，在这里加个removeClass()是先清除所有的类，然后再添加这个类
+                     }
+                     function getOut(str){
+                          that.removeClass("current");
+                          that.children("div").removeClass().addClass(str);
+                          // 记住给一个元素的子元素增加一个类，首先获取这个元素that.children("div")，在这里加个removeClass()是先清除所有的类，然后再添加这个类
+                     }
+                });                                              
+		});
+	</script>
+</head>
+<body>
+	<div class="demo">
+		<div class="list">
+			<img src="images/00.jpg" alt="">
+			<div>
+				<img src="images/1.jpg" alt="">
+			</div>
+		</div>
+		<div class="list">
+			<img src="images/00.jpg" alt="">
+			<div>
+				<img src="images/2.jpg" alt="">
+			</div>
+		</div>
+		<div class="list">
+			<img src="images/00.jpg" alt="">
+			<div>
+				<img src="images/3.jpg" alt="">
+			</div>
+		</div>
+		<div class="list">
+			<img src="images/00.jpg" alt="">
+			<div>
+				<img src="images/4.jpg" alt="">
+			</div>
+		</div>
+		<div class="list">
+			<img src="images/00.jpg" alt="">
+			<div>
+				<img src="images/5.jpg" alt="">
+			</div>
+		</div>
+		<div class="list">
+			<img src="images/00.jpg" alt="">
+			<div>
+				<img src="images/6.jpg" alt="">
+			</div>
+		</div>
+		<div class="list">
+			<img src="images/00.jpg" alt="">
+			<div>
+				<img src="images/7.jpg" alt="">
+			</div>
+		</div>
+		<div class="list">
+			<img src="images/00.jpg" alt="">
+			<div>
+				<img src="images/8.jpg" alt="">
+			</div>
+		</div>
+		<div class="list">
+			<img src="images/00.jpg" alt="">
+			<div>
+				<img src="images/9.jpg" alt="">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

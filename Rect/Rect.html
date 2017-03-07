@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象版的矩形</title>
+    <script src="Rect.js"></script>
+</head>
+<body>
+<div class="container">
+    <canvas id="demo1">
+
+    </canvas>
+    <canvas id="demo2">
+        你的浏览器不支持canvas，请升级浏览器
+    </canvas>
+</div>
+    <script>
+      var canvas1 = document.querySelector('#demo1');
+      var canvas2 = document.querySelector('#demo2');
+        var ctx1 = canvas1.getContext('2d');
+        var ctx2 = canvas2.getContext('2d');
+      canvas1.width = 600;
+      canvas1.height = 600;
+      canvas1.style.border = "1px solid #2195de";
+
+      canvas2.width = 600;
+      canvas2.height = 600;
+      canvas2.style.border = "1px solid #2195de";
+
+        //创建矩形
+        var rect = new Rect({
+            x: 100,
+            y: 100,
+            w: 100,
+            h: 100,
+            opacity:.6,
+            rotation: 60,
+            scaleX: 1,
+            scaleY: 1,
+            fillStyle: 'purple',	//填充的样式
+            strokeStyle: 'yellow'
+        });
+        // 渲染矩形
+        rect.render( ctx1 );
+
+
+       setInterval(function() {
+          ctx1.clearRect( 0,  0 , canvas1.width, canvas1.height);
+          rect.x += 10;
+          rect.render(ctx1);
+
+          // 把canvas输出到一张图片上去
+          // var img = document.getElementById('imgId');
+          // img.src = canvas.toDataURL('image/png', .5);
+
+          //把一个画布渲染到另外一个画布上。
+
+          ctx2.drawImage(canvas1, 0, 0);
+
+        }, 100)
+    </script>
+</body>
+</html>

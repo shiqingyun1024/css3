@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>长方体</title>
+	<style>
+	/* 直接把立方体改为长方体 */
+	.box{
+		margin: 50px 400px;
+		/* perspective: 700px; */
+	}
+	ul{
+		list-style: none;
+		/* perspective: 700px; */
+		width: 200px;
+		height: 200px;
+		position: relative;
+		transition: all 6s;
+		transform: scaleX(2) scaleY(1.2) rotateX(0) rotateY(0);
+		transform-style: preserve-3d;
+		/* scale()具有继承性，就可以直接改变父级元素的xy轴的长度来，这样就可以直接把立方体改为长方体了， */
+	}
+	ul:hover{
+			transform: scaleX(2) scaleY(1.2) rotateX(360deg) rotateY(360deg);
+		}
+		li{
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			background-color: rgba(21, 95, 30, 0.6);
+			line-height: 200px;
+			text-align: center;
+			color: #fff;
+			font-size: 25px;
+		}
+		li:nth-child(1){
+            background-color: rgba(0, 0, 255, 0.6);
+            transform: translateZ(100px);
+		}
+		li:nth-child(2){
+            background-color: rgba(00, 55, 99, 0.6);
+            transform: rotateX(-90deg) translateZ(100px);
+		}
+		li:nth-child(3){
+			background-color: rgba(0, 255, 0, 0.5);
+			transform: rotateX(-180deg) translateZ(100px);
+		}
+		li:nth-child(4){
+			background-color: rgba(255, 0, 0, 0.6);
+			transform: rotateX(-270deg) translateZ(100px);
+		}
+		li:nth-child(5){
+			background-color: rgba(00, 255, 255, 0.6);
+			transform: rotateY(-90deg) translateZ(100px);
+		}
+		li:nth-child(6){
+			background-color: rgba(255, 0, 255, 0.6);
+			transform: rotateY(90deg) translateZ(100px);
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li>第1个盒子</li>
+			<li>第2个盒子</li>
+			<li>第3个盒子</li>
+			<li>第4个盒子</li>
+			<li>第5个盒子</li>
+			<li>第6个盒子</li>
+		</ul>
+	</div>
+</body>
+</html>

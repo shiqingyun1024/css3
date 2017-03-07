@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3d效果小练习</title>
+	<style>
+	    body{
+	   	-webkit-perspective: 200;
+	   	/* 具有透视效果的功能 ，不过兼容性不是很好*/
+	   }
+		.transform{
+			width: 200px;
+			height: 200px;
+			margin: 30px auto;
+			background-color: pink;
+			
+			
+			
+		}
+		.transform:hover{
+			/* 别忘了能实现效果的hover */
+			transform: scaleZ(0.5) translateZ(50px) rotateX(45deg);
+			background-color: teal; 
+			/* 3d效果的实现，scale缩放，translate移动，rotate旋转*/
+			transition: all 5s;
+		}  
+		.transform1{
+			width: 100px;
+			height: 100px;
+			margin: 30px auto;
+			background-color: teal;
+			/* transform: translate(50px, 60px) scale(2, 1.5) rotate(150deg);
+			transition: all 6s; */
+		}
+		.transform1:hover{
+			transform: translate(50px, 60px) scale(2, 1.5) rotate(150deg);
+			transition: all 6s;
+		}
+        .transform2{
+        	width: 100px;
+			height: 100px;
+			margin: 30px auto;
+			background-color: purple;
+			
+        }
+        .transform2:hover{
+            transform: skew(60deg);
+			/* skew倾斜，主要是用于2D，3D中没有它 */
+			transition: all 3s;
+        }
+	</style>
+</head>
+<body>
+	<div class="transform"></div>
+	<div class="transform1"></div>
+	<div class="transform2"></div>
+</body>
+</html>

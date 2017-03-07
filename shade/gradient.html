@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>渐变应用</title>
+	<style>
+	   .linear-gradient{
+	   	width: 200px;
+	   	height: 70px;
+	   	font-size: 14px;
+	   	text-align: center;
+	   	line-height: 70px;
+	   	color: #fff;
+	   	background-color: green;
+	   	margin: 50px;
+	   	background-image: linear-gradient(to top,rgba(0, 0, 0, 0.8),rgba(0,0,0,0));
+	   	/* 线性渐变可以同过改变背景色的透明度来实现立体效果 */
+	   }
+		.radial-gradient{
+			width: 200px;
+			height: 200px;
+			color: #fff;
+			margin: 10px;
+			text-align: center;
+			line-height: 200px;
+            background-color: blue;
+            border-radius: 100px;
+            background-image: radial-gradient(150px at 50px 50px,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.6));
+            /* 径向渐变也可以通过改变背景颜色的透明度来实现立体效果 */
+		}
+		.repeating-linear-gradient{
+            width: 200px;
+            height: 50px;
+            margin: 10px;
+            /* background-color: yellow; */
+            background-image: repeating-linear-gradient(45deg,yellow 10%,blue 20%);
+            /* 主要做一个练习,重复线性渐变 */
+		}
+		.repeating-radial-gradient{
+			width: 200px;
+			height: 200px;
+			margin: 10px;
+			background-image: repeating-radial-gradient(50px at center center,yellow 20%,blue 30%);
+			/* 主要做一个练习,重复径向渐变 */
+		}
+		.repeating-radial-gradient2{
+			width: 200px;
+			height: 200px;
+			margin: 10px;
+			background-image: repeating-radial-gradient(yellow 10%,blue 40%);
+		}
+		.linear-gradient2{
+			width: 200px;
+			height: 30px;
+			background-color: yellow;
+			background-image: linear-gradient(135deg,blue 30%,transparent 30%,transparent 60%,blue 60%,blue 90%,transparent 90%,transparent 100%);
+			background-size: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="linear-gradient">立体按钮</div>
+	<div class="radial-gradient">球体</div>
+	<div class="repeating-linear-gradient"></div>
+	<div class="repeating-radial-gradient"></div>
+	<div class="repeating-radial-gradient2"></div>
+	<div class="linear-gradient2"></div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>渐变</title>
+	<style>
+	    .gradient{
+	    	float: left;
+	    	width: 150px;
+	    	height: 50px;
+	    	margin: 15px;
+	    }
+		.item:nth-child(1) .gradient{
+          background-image: linear-gradient(orange,green);
+          /* linear-gradient线性渐变，后面跟渐变的颜色，可以是多种颜色 */
+		}
+		.item:nth-child(2) .gradient{
+          background-image: linear-gradient(orange,green,blue);
+          /* linear-gradient线性渐变，后面跟渐变的颜色，可以是多种颜色 默认方向为竖直向下*/
+		}
+		.item:nth-child(3) .gradient{
+          background-image: linear-gradient(#FCB4B4,#FA9506);
+          /* linear-gradient线性渐变，后面跟渐变的颜色，可以是多种颜色 */
+		}
+		.item:nth-child(4) .gradient{
+          background-image: linear-gradient(90deg,#FCB4B4,teal);
+          /* linear-gradient线性渐变，后面跟渐变的颜色，可以是多种颜色  同时后面也可以设置方向，360度都可以设置*/
+		}
+		.item:nth-child(5) .gradient{
+          background-image: linear-gradient(to left,#FCB4B4,red);
+          /* linear-gradient线性渐变，后面跟渐变的颜色，可以是多种颜色  同时后面也可以设置方向，360度都可以设置 也可以用关键字来定义方向*/
+		}
+		.item:nth-child(6) .gradient{
+          background-image: radial-gradient(#FCB4B4,red);
+          /* radial-gradient径向渐变，非常好 */
+         }
+         .item:nth-child(7) .gradient{
+          background-image: radial-gradient(60px 30px,#FCB4B4,red);
+          /* radial-gradient径向渐变，非常好 不过设置不了方向，以为本身是径向渐变，不过可以设置半径，可以设置竖直方向的数值和水平方向的数值，设置一个值为半径*/
+         }
+         .item:nth-child(8) .gradient{
+          background-image: radial-gradient(60px 30px,#E9FC97,#F87004);
+          /* radial-gradient径向渐变，非常好 不过设置不了方向，以为本身是径向渐变，不过可以设置半径，可以设置竖直方向的数值和水平方向的数值，设置一个值为半径*/
+         }
+         .item:nth-child(9) .gradient{
+          background-image: repeating-linear-gradient(to left,#FCC1C1,#650000);
+          /* repeating-linear-gradient重复渐变，非常好 */
+         }
+         .item:nth-child(10) .gradient{
+          background-image: repeating-linear-gradient(to left,#FCC1C1 60%,#650000 80%);
+          /* repeating-linear-gradient重复渐变，非常好 可以设置方向，用百分比指定起止色位置*/
+         }
+         .item:nth-child(11) .gradient{
+          width: 30px;
+          height: 200px;
+          background-image: repeating-linear-gradient(to top, #f00, #ff0 10%, #f00 15%);
+          /* repeating-linear-gradient重复渐变，非常好 可以设置方向，用百分比指定起止色位置*/
+         }
+         .item:nth-child(12) .gradient{
+          background-image: repeating-linear-gradient(#f00, #ff0 10%, #f00 15%);
+          /* repeating-linear-gradient重复渐变，非常好 可以设置方向，用百分比指定起止色位置*/
+         }
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="item">
+			<div class="gradient"></div>
+		</div>
+		<div class="item">
+			<div class="gradient"></div>
+		</div>
+		<div class="item">
+			<div class="gradient"></div>
+		</div>
+		<div class="item">
+			<div class="gradient"></div>
+		</div>
+		<div class="item">
+			<div class="gradient"></div>
+		</div>
+		<div class="item">
+			<div class="gradient"></div>
+		</div>
+		<div class="item">
+			<div class="gradient"></div>
+		</div>
+		<div class="item">
+			<div class="gradient"></div>
+		</div>
+		<div class="item">
+			<div class="gradient"></div>
+		</div>
+		<div class="item">
+			<div class="gradient"></div>
+		</div>
+		<div class="item">
+			<div class="gradient"></div>
+		</div>
+		<div class="item">
+			<div class="gradient"></div>
+		</div>
+		<div class="item">
+			<div class="gradient"></div>
+		</div>
+		<div class="item">
+			<div class="gradient"></div>
+		</div>
+		<div class="item">
+			<div class="gradient"></div>
+		</div>
+	</div>
+</body>
+</html>
